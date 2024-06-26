@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #080808;
+    --second-bg-color: #1b0000;
+    --text-color: white;
+    --main-color: #f60b0b;
+}
+
+html {
+    font-synthesis: 60%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 80px; 
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 12%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    text-shadow: 0 0 25px var(--main-color);
+    color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+.projects-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 12%;
+}
+
+.project {
+    background: var(--second-bg-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1rem;
+    width: calc(33% - 2rem);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project-title {
+    text-align: center;
+    padding: 1rem;
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.project:hover .carousel img {
+    transform: translateX(-100%);
+}
+.menu-icon {
+    background-image: url('menu-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px; /* Defina o tamanho do ícone conforme necessário */
+    height: 30px; /* Defina o tamanho do ícone conforme necessário */
+    cursor: pointer; /* Adicione cursor pointer para indicar que é clicável */
+    display: none; /* Oculta o ícone por padrão */
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Exibe o ícone apenas em dispositivos móveis */
+    }
+
+    /* Outros estilos para o menu em dispositivos móveis */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 138px; /* Ajusta a posição do menu fixo */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 2rem 0;
+        z-index: 999;
+        text-align: center;
+        
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin: 1rem 0;
+    }
+
+    .header {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+    .project {
+        width: calc(50% - 2rem);
+        margin-top: 15%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project {
+        width: calc(100% - 2rem);
+    }
+}

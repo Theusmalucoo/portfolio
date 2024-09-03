@@ -7,22 +7,15 @@ function toggleMenu() {
 // Função para verificar e alterar a ordem dos elementos com base no tamanho da tela
 function reorderElements() {
     const menuIcon = document.querySelector('.menu-icon');
-    const homeSection = document.querySelector('.home');
 
     // Verifica se a largura da tela é menor ou igual a 768px (dispositivos móveis)
     if (window.innerWidth <= 768) {
-        // Adiciona a classe para visualização móvel
-        homeSection.classList.add('mobile-view');
         // Remove o atributo hidden para exibir o ícone do menu
         menuIcon.removeAttribute('hidden');
     } else {
-        // Remove a classe para visualização padrão
-        homeSection.classList.remove('mobile-view');
         // Adiciona o atributo hidden para ocultar o ícone do menu
         menuIcon.setAttribute('hidden', true);
     }
-
-
 }
 
 // Chama a função ao carregar a página e redimensionar a tela
@@ -37,22 +30,35 @@ function initializeCarousel() {
         let imgs = carousel.querySelectorAll('img');
         let index = 0;
 
-        function showNextImage() {
-            imgs[index].style.display = 'none';
-            index = (index + 1) % imgs.length;
-            imgs[index].style.display = 'block';
+        // Inicializa a exibição das imagens
+        function startCarousel() {
+            imgs.forEach(img => img.style.display = 'none'); // Oculta todas as imagens
+            imgs[index].style.display = 'block'; // Exibe a imagem atual
         }
 
-        carousel.addEventListener('mouseenter', () => {
-            imgs.forEach(img => img.style.display = 'none');
-            imgs[index].style.display = 'block';
-            carousel.interval = setInterval(showNextImage, 1000); // Muda a imagem a cada 1 segundo
-        });
+        function showNextImage() {
+            imgs[index].style.display = 'none'; // Oculta a imagem atual
+            index = (index + 1) % imgs.length; // Avança para a próxima imagem
+            imgs[index].style.display = 'block'; // Exibe a nova imagem
+        }
 
-        carousel.addEventListener('mouseleave', () => {
-            clearInterval(carousel.interval);
-            imgs.forEach(img => img.style.display = 'block');
-        });
+        // Começa o carrossel imediatamente
+        startCarousel();
+        carousel.interval = setInterval(showNextImage, 3000); // Altera a imagem a cada 3 segundos
     });
 }
 
+// Inicializa o carrossel após o carregamento da página
+window.addEventListener('DOMContentLoaded', initializeCarousel);
+
+function setActiveLink() {
+    const linkId = 'projeto-link'; 
+    const linkElement = document.getElementById(linkId);
+
+    if (linkElement) {
+        linkElement.classList.add('active');
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', setActiveLink);

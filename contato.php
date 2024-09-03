@@ -8,17 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.3/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo">
-            Matheus <span>Carvalho</span>
-        </a>    
-        <div class="menu-icon" onclick="toggleMenu()"></div>
-        <nav class="navbar">
-            <a href="index.html">Página Principal</a>
-            <a href="projeto.html">Projetos</a>
-            <a href="contato.html" class="active">Contato</a>
-        </nav>  
-    </header>
+    <?php include 'header.php'; ?>
     <section class="contato" id="contato">
         <div class="titulo">    
             <div class="title-container">
@@ -31,10 +21,10 @@
                 <ul>
                     <li>
                         <div class="email-container">
-                            <a href="mailto:carvalho.theus@outlook.com" target="_blank">
+                            <a href="mailto:souza.matheus-carvalho@outlook.com.br" target="_blank">
                                 <i class='bx bxs-envelope'></i>
                             </a>
-                            <p>carvalho.theus@outlook.com</p>
+                            <p>souza.matheus-carvalho@outlook.com.br</p>
                         </div>
                     </li>
                     <li>
@@ -57,8 +47,8 @@
             </div>
             <div class="btn-group">
                 <p class="curriculo">Para visualizar ou baixar meu currículo, clique em uma das opções abaixo</p>
-                <a href="CV-MatheusDeSouzaCarvalho2024.pdf" class="btn" target="_blank">Visualizar Currículo</a>
-                <a href="CV-MatheusDeSouzaCarvalho2024.pdf" class="btn" download="">Baixar Currículo</a>
+                <a href="Matheus-CV.pdf" class="btn" target="_blank">Visualizar Currículo</a>
+                <a href="Matheus-CV.pdf" class="btn" download="">Baixar Currículo</a>
             </div>
         </div>
     </section>

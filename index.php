@@ -8,17 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.3/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo">
-            Matheus <span>Carvalho</span>
-        </a>    
-        <div class="menu-icon" onclick="toggleMenu()"></div>
-        <nav class="navbar">
-            <a href="index.html" id="home-link" class="active">Página Principal</a>
-            <a href="projeto.html" id="projeto-link">Projetos</a>
-            <a href="contato.html" id="contato-link">Contato</a>
-        </nav>  
-    </header>
+    <?php include 'header.php'; ?>
     <section class="home" id="home">
         <div class="container">
             <div class="home-img">

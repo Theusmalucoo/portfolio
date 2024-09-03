@@ -28,3 +28,15 @@ function reorderElements() {
 // Chama a função ao carregar a página e redimensionar a tela
 window.addEventListener('DOMContentLoaded', reorderElements);
 window.addEventListener('resize', reorderElements);
+
+function setActiveLink() {
+    const linkId = 'home-link'; 
+    const linkElement = document.getElementById(linkId);
+
+    if (linkElement) {
+        linkElement.classList.add('active');
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', setActiveLink);
